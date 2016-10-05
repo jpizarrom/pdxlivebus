@@ -10,8 +10,8 @@ import { divIcon, point } from "leaflet";
 import AppCss from "./app.css";
 
 const position = [
-  45.5200,
-  -122.6716007,
+  -33.4851226806641,
+  -70.5222930908203,
 ];
 
 const cover = {position: 'absolute', left: 0, right: 0, top: 0, bottom: 0};
