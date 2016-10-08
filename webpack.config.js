@@ -33,9 +33,11 @@ module.exports = {
         loader: 'babel',
         exclude: /node_modules/,
         query: {
-          "presets": ["es2015","react"],
+          "presets": ["es2015","react", "babel-preset-philpl"],
           "plugins": [
             "transform-runtime",
+            "transform-react-constant-elements",
+            "transform-react-inline-elements"
           ],
           "env": {
             "development": {
@@ -68,6 +70,10 @@ module.exports = {
         test: /\.css$/,
         exclude: path.join(__dirname, 'app'),
         loader: 'style-loader!css-loader'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json'
       }
 
     ]
