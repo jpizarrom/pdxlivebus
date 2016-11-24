@@ -1,0 +1,29 @@
+language: node_js
+
+node_js:
+  - "5.5.0"
+
+build:
+  ci:
+    - npm prune
+    - shippable_retry npm install --unsafe-perm
+    - shippable_retry npm update --unsafe-perm
+#    - npm test
+
+  post_ci:
+    - >-
+       shippable_retry npm run build &&
+       git add -A . &&
+       git commit -m "Update demo for ${GIT_TAG_NAME} [skip ci]" &&
+       shippable_retry git push origin ${BRANCH}:gh-pages -f;
+
+  cache: true
+  cache_dir_list:
+    - $SHIPPABLE_BUILD_DIR/node_modules
+    - $SHIPPABLE_BUILD_DIR/elm-stuff
+    - $SHIPPABLE_BUILD_DIR/.git
+
+integrations:
+  scm:
+    - integrationName: github
+      type: gitRepo
