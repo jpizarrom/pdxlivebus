@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactGA from 'react-ga';
 import classnames from "classnames";
 import { connect } from "react-redux";
 import { Map, Marker, TileLayer } from 'react-leaflet';
@@ -13,20 +14,20 @@ import { divIcon, point } from "leaflet";
 
 import AppCss from "./app.css";
 
-const position = [
-  -33.4851226806641,
-  -70.5222930908203,
-];
+// const position = [
+//   -33.4851226806641,
+//   -70.5222930908203,
+// ];
 
 const cover = {position: 'absolute', left: 0, right: 0, top: 0, bottom: 0};
 
-const state = {
-  center: [-70.5222930908203, -33.4851226806641],
-  zoom: [10],
-  skip: 0,
-  // stations: new Map(),
-  popupShowLabel: true
-};
+// const state = {
+//   center: [-70.5222930908203, -33.4851226806641],
+//   zoom: [10],
+//   skip: 0,
+//   // stations: new Map(),
+//   popupShowLabel: true
+// };
 
 const containerStyle = {
   height: "100vh",
@@ -58,7 +59,7 @@ const styles = {
 class App extends Component {
 
   state = {
-    center: [-70.5222930908203, -33.4851226806641],
+    center: [-70.64794101900515, -33.48742705566642],
     zoom: [10],
     skip: 0,
     // stations: new Map(),
@@ -66,6 +67,7 @@ class App extends Component {
   };
 
   _markerClick = (vehicle, { feature }) => {
+    ReactGA.modalview('/'+vehicle.type+'/'+vehicle.routeNumber+'/'+vehicle.vehicleID);
     this.setState({
       center: feature.geometry.coordinates,
       zoom: [14],

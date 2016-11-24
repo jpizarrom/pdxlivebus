@@ -15,6 +15,7 @@ build:
        shippable_retry npm run build &&
        git add -A . &&
        git commit -m "Update demo for ${GIT_TAG_NAME} [skip ci]" &&
+       git remote set-url origin git@github.com:${REPO_FULL_NAME}.git &&
        shippable_retry git push origin ${BRANCH}:gh-pages -f;
 
   cache: true
@@ -23,7 +24,6 @@ build:
     - $SHIPPABLE_BUILD_DIR/elm-stuff
     - $SHIPPABLE_BUILD_DIR/.git
 
-integrations:
-  scm:
-    - integrationName: github
-      type: gitRepo
+branches:
+  except:
+    - gh-pages
