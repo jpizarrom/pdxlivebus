@@ -5285,7 +5285,7 @@
 			}
 
 			this._requestUpdate();
-			
+
 			this.fire('remove');
 			this._map = null;
 		},
@@ -8340,7 +8340,7 @@
 					this.addAttribution(map._layers[i].getAttribution());
 				}
 			}
-			
+
 			map
 			    .on('layeradd', this._onLayerAdd, this)
 			    .on('layerremove', this._onLayerRemove, this);
@@ -11972,7 +11972,7 @@
 	$export.B = 16;  // bind
 	$export.W = 32;  // wrap
 	$export.U = 64;  // safe
-	$export.R = 128; // real proto method for `library` 
+	$export.R = 128; // real proto method for `library`
 	module.exports = $export;
 
 /***/ },
@@ -44250,9 +44250,9 @@
 
 		/**
 		 * Tests whether or not the arguments have approximately the same value, within an absolute
-		 * or relative tolerance of glMatrix.EPSILON (an absolute tolerance is used for values less 
+		 * or relative tolerance of glMatrix.EPSILON (an absolute tolerance is used for values less
 		 * than or equal to 1.0, and a relative tolerance is used for larger values)
-		 * 
+		 *
 		 * @param {Number} a The first number to test.
 		 * @param {Number} b The second number to test.
 		 * @returns {Boolean} True if the numbers are approximately equal, false otherwise.
@@ -44410,7 +44410,7 @@
 		        out[2] = a[1];
 		        out[3] = a[3];
 		    }
-		    
+
 		    return out;
 		};
 
@@ -44431,7 +44431,7 @@
 		        return null;
 		    }
 		    det = 1.0 / det;
-		    
+
 		    out[0] =  a3 * det;
 		    out[1] = -a1 * det;
 		    out[2] = -a2 * det;
@@ -44591,19 +44591,19 @@
 
 		/**
 		 * Returns L, D and U matrices (Lower triangular, Diagonal and Upper triangular) by factorizing the input matrix
-		 * @param {mat2} L the lower triangular matrix 
-		 * @param {mat2} D the diagonal matrix 
-		 * @param {mat2} U the upper triangular matrix 
+		 * @param {mat2} L the lower triangular matrix
+		 * @param {mat2} D the diagonal matrix
+		 * @param {mat2} U the upper triangular matrix
 		 * @param {mat2} a the input matrix to factorize
 		 */
 
-		mat2.LDU = function (L, D, U, a) { 
-		    L[2] = a[2]/a[0]; 
-		    U[0] = a[0]; 
-		    U[1] = a[1]; 
-		    U[3] = a[3] - L[2] * U[1]; 
-		    return [L, D, U];       
-		}; 
+		mat2.LDU = function (L, D, U, a) {
+		    L[2] = a[2]/a[0];
+		    U[0] = a[0];
+		    U[1] = a[1];
+		    U[3] = a[3] - L[2] * U[1];
+		    return [L, D, U];
+		};
 
 		/**
 		 * Adds two mat2's
@@ -44735,8 +44735,8 @@
 		/**
 		 * @class 2x3 Matrix
 		 * @name mat2d
-		 * 
-		 * @description 
+		 *
+		 * @description
 		 * A mat2d contains six elements defined as:
 		 * <pre>
 		 * [a, c, tx,
@@ -45056,7 +45056,7 @@
 		 * @returns {String} string representation of the matrix
 		 */
 		mat2d.str = function (a) {
-		    return 'mat2d(' + a[0] + ', ' + a[1] + ', ' + a[2] + ', ' + 
+		    return 'mat2d(' + a[0] + ', ' + a[1] + ', ' + a[2] + ', ' +
 		                    a[3] + ', ' + a[4] + ', ' + a[5] + ')';
 		};
 
@@ -45066,9 +45066,9 @@
 		 * @param {mat2d} a the matrix to calculate Frobenius norm of
 		 * @returns {Number} Frobenius norm
 		 */
-		mat2d.frob = function (a) { 
+		mat2d.frob = function (a) {
 		    return(Math.sqrt(Math.pow(a[0], 2) + Math.pow(a[1], 2) + Math.pow(a[2], 2) + Math.pow(a[3], 2) + Math.pow(a[4], 2) + Math.pow(a[5], 2) + 1))
-		}; 
+		};
 
 		/**
 		 * Adds two mat2d's
@@ -45395,7 +45395,7 @@
 		        out[7] = a[5];
 		        out[8] = a[8];
 		    }
-		    
+
 		    return out;
 		};
 
@@ -45418,8 +45418,8 @@
 		        // Calculate the determinant
 		        det = a00 * b01 + a01 * b11 + a02 * b21;
 
-		    if (!det) { 
-		        return null; 
+		    if (!det) {
+		        return null;
 		    }
 		    det = 1.0 / det;
 
@@ -45762,8 +45762,8 @@
 		        // Calculate the determinant
 		        det = b00 * b11 - b01 * b10 + b02 * b09 + b03 * b08 - b04 * b07 + b05 * b06;
 
-		    if (!det) { 
-		        return null; 
+		    if (!det) {
+		        return null;
 		    }
 		    det = 1.0 / det;
 
@@ -45789,8 +45789,8 @@
 		 * @returns {String} string representation of the matrix
 		 */
 		mat3.str = function (a) {
-		    return 'mat3(' + a[0] + ', ' + a[1] + ', ' + a[2] + ', ' + 
-		                    a[3] + ', ' + a[4] + ', ' + a[5] + ', ' + 
+		    return 'mat3(' + a[0] + ', ' + a[1] + ', ' + a[2] + ', ' +
+		                    a[3] + ', ' + a[4] + ', ' + a[5] + ', ' +
 		                    a[6] + ', ' + a[7] + ', ' + a[8] + ')';
 		};
 
@@ -45903,7 +45903,7 @@
 		 * @returns {Boolean} True if the matrices are equal, false otherwise.
 		 */
 		mat3.exactEquals = function (a, b) {
-		    return a[0] === b[0] && a[1] === b[1] && a[2] === b[2] && 
+		    return a[0] === b[0] && a[1] === b[1] && a[2] === b[2] &&
 		           a[3] === b[3] && a[4] === b[4] && a[5] === b[5] &&
 		           a[6] === b[6] && a[7] === b[7] && a[8] === b[8];
 		};
@@ -47453,25 +47453,25 @@
 		  var trace = mat[0] + mat[5] + mat[10];
 		  var S = 0;
 
-		  if (trace > 0) { 
+		  if (trace > 0) {
 		    S = Math.sqrt(trace + 1.0) * 2;
 		    out[3] = 0.25 * S;
 		    out[0] = (mat[6] - mat[9]) / S;
-		    out[1] = (mat[8] - mat[2]) / S; 
-		    out[2] = (mat[1] - mat[4]) / S; 
-		  } else if ((mat[0] > mat[5])&(mat[0] > mat[10])) { 
+		    out[1] = (mat[8] - mat[2]) / S;
+		    out[2] = (mat[1] - mat[4]) / S;
+		  } else if ((mat[0] > mat[5])&(mat[0] > mat[10])) {
 		    S = Math.sqrt(1.0 + mat[0] - mat[5] - mat[10]) * 2;
 		    out[3] = (mat[6] - mat[9]) / S;
 		    out[0] = 0.25 * S;
-		    out[1] = (mat[1] + mat[4]) / S; 
-		    out[2] = (mat[8] + mat[2]) / S; 
-		  } else if (mat[5] > mat[10]) { 
+		    out[1] = (mat[1] + mat[4]) / S;
+		    out[2] = (mat[8] + mat[2]) / S;
+		  } else if (mat[5] > mat[10]) {
 		    S = Math.sqrt(1.0 + mat[5] - mat[0] - mat[10]) * 2;
 		    out[3] = (mat[8] - mat[2]) / S;
-		    out[0] = (mat[1] + mat[4]) / S; 
+		    out[0] = (mat[1] + mat[4]) / S;
 		    out[1] = 0.25 * S;
-		    out[2] = (mat[6] + mat[9]) / S; 
-		  } else { 
+		    out[2] = (mat[6] + mat[9]) / S;
+		  } else {
 		    S = Math.sqrt(1.0 + mat[10] - mat[0] - mat[5]) * 2;
 		    out[3] = (mat[1] - mat[4]) / S;
 		    out[0] = (mat[8] + mat[2]) / S;
@@ -48028,8 +48028,8 @@
 		 * @returns {Boolean} True if the matrices are equal, false otherwise.
 		 */
 		mat4.exactEquals = function (a, b) {
-		    return a[0] === b[0] && a[1] === b[1] && a[2] === b[2] && a[3] === b[3] && 
-		           a[4] === b[4] && a[5] === b[5] && a[6] === b[6] && a[7] === b[7] && 
+		    return a[0] === b[0] && a[1] === b[1] && a[2] === b[2] && a[3] === b[3] &&
+		           a[4] === b[4] && a[5] === b[5] && a[6] === b[6] && a[7] === b[7] &&
 		           a[8] === b[8] && a[9] === b[9] && a[10] === b[10] && a[11] === b[11] &&
 		           a[12] === b[12] && a[13] === b[13] && a[14] === b[14] && a[15] === b[15];
 		};
@@ -48043,13 +48043,13 @@
 		 */
 		mat4.equals = function (a, b) {
 		    var a0  = a[0],  a1  = a[1],  a2  = a[2],  a3  = a[3],
-		        a4  = a[4],  a5  = a[5],  a6  = a[6],  a7  = a[7], 
-		        a8  = a[8],  a9  = a[9],  a10 = a[10], a11 = a[11], 
+		        a4  = a[4],  a5  = a[5],  a6  = a[6],  a7  = a[7],
+		        a8  = a[8],  a9  = a[9],  a10 = a[10], a11 = a[11],
 		        a12 = a[12], a13 = a[13], a14 = a[14], a15 = a[15];
 
 		    var b0  = b[0],  b1  = b[1],  b2  = b[2],  b3  = b[3],
-		        b4  = b[4],  b5  = b[5],  b6  = b[6],  b7  = b[7], 
-		        b8  = b[8],  b9  = b[9],  b10 = b[10], b11 = b[11], 
+		        b4  = b[4],  b5  = b[5],  b6  = b[6],  b7  = b[7],
+		        b8  = b[8],  b9  = b[9],  b10 = b[10], b11 = b[11],
 		        b12 = b[12], b13 = b[13], b14 = b[14], b15 = b[15];
 
 		    return (Math.abs(a0 - b0) <= glMatrix.EPSILON*Math.max(1.0, Math.abs(a0), Math.abs(b0)) &&
@@ -48358,7 +48358,7 @@
 		 * @returns {quat} out
 		 */
 		quat.rotateX = function (out, a, rad) {
-		    rad *= 0.5; 
+		    rad *= 0.5;
 
 		    var ax = a[0], ay = a[1], az = a[2], aw = a[3],
 		        bx = Math.sin(rad), bw = Math.cos(rad);
@@ -48379,7 +48379,7 @@
 		 * @returns {quat} out
 		 */
 		quat.rotateY = function (out, a, rad) {
-		    rad *= 0.5; 
+		    rad *= 0.5;
 
 		    var ax = a[0], ay = a[1], az = a[2], aw = a[3],
 		        by = Math.sin(rad), bw = Math.cos(rad);
@@ -48400,7 +48400,7 @@
 		 * @returns {quat} out
 		 */
 		quat.rotateZ = function (out, a, rad) {
-		    rad *= 0.5; 
+		    rad *= 0.5;
 
 		    var ax = a[0], ay = a[1], az = a[2], aw = a[3],
 		        bz = Math.sin(rad), bw = Math.cos(rad);
@@ -48488,8 +48488,8 @@
 		        sinom  = Math.sin(omega);
 		        scale0 = Math.sin((1.0 - t) * omega) / sinom;
 		        scale1 = Math.sin(t * omega) / sinom;
-		    } else {        
-		        // "from" and "to" quaternions are very close 
+		    } else {
+		        // "from" and "to" quaternions are very close
 		        //  ... so we can do a linear interpolation
 		        scale0 = 1.0 - t;
 		        scale1 = t;
@@ -48499,7 +48499,7 @@
 		    out[1] = scale0 * ay + scale1 * by;
 		    out[2] = scale0 * az + scale1 * bz;
 		    out[3] = scale0 * aw + scale1 * bw;
-		    
+
 		    return out;
 		};
 
@@ -48517,12 +48517,12 @@
 		quat.sqlerp = (function () {
 		  var temp1 = quat.create();
 		  var temp2 = quat.create();
-		  
+
 		  return function (out, a, b, c, d, t) {
 		    quat.slerp(temp1, a, d, t);
 		    quat.slerp(temp2, b, c, t);
 		    quat.slerp(out, temp1, temp2, 2 * t * (1 - t));
-		    
+
 		    return out;
 		  };
 		}());
@@ -48538,7 +48538,7 @@
 		    var a0 = a[0], a1 = a[1], a2 = a[2], a3 = a[3],
 		        dot = a0*a0 + a1*a1 + a2*a2 + a3*a3,
 		        invDot = dot ? 1.0/dot : 0;
-		    
+
 		    // TODO: Would be faster to return [0,0,0,0] immediately if dot == 0
 
 		    out[0] = -a0*invDot;
@@ -48638,7 +48638,7 @@
 		          i = 2;
 		        var j = (i+1)%3;
 		        var k = (i+2)%3;
-		        
+
 		        fRoot = Math.sqrt(m[i*3+i]-m[j*3+j]-m[k*3+k] + 1.0);
 		        out[i] = 0.5 * fRoot;
 		        fRoot = 0.5 / fRoot;
@@ -48646,7 +48646,7 @@
 		        out[j] = (m[j*3+i] + m[i*3+j]) * fRoot;
 		        out[k] = (m[k*3+i] + m[i*3+k]) * fRoot;
 		    }
-		    
+
 		    return out;
 		};
 
@@ -49160,11 +49160,11 @@
 		      factor2 = factorTimes2 * (t - 2) + t,
 		      factor3 = factorTimes2 * (t - 1),
 		      factor4 = factorTimes2 * (3 - 2 * t);
-		  
+
 		  out[0] = a[0] * factor1 + b[0] * factor2 + c[0] * factor3 + d[0] * factor4;
 		  out[1] = a[1] * factor1 + b[1] * factor2 + c[1] * factor3 + d[1] * factor4;
 		  out[2] = a[2] * factor1 + b[2] * factor2 + c[2] * factor3 + d[2] * factor4;
-		  
+
 		  return out;
 		};
 
@@ -49187,11 +49187,11 @@
 		      factor2 = 3 * t * inverseFactorTimesTwo,
 		      factor3 = 3 * factorTimes2 * inverseFactor,
 		      factor4 = factorTimes2 * t;
-		  
+
 		  out[0] = a[0] * factor1 + b[0] * factor2 + c[0] * factor3 + d[0] * factor4;
 		  out[1] = a[1] * factor1 + b[1] * factor2 + c[1] * factor3 + d[1] * factor4;
 		  out[2] = a[2] * factor1 + b[2] * factor2 + c[2] * factor3 + d[2] * factor4;
-		  
+
 		  return out;
 		};
 
@@ -49319,17 +49319,17 @@
 		  	p[0] = a[0] - b[0];
 		  	p[1] = a[1] - b[1];
 		  	p[2] = a[2] - b[2];
-		  
+
 		  	//perform rotation
 		  	r[0] = p[2]*Math.sin(c) + p[0]*Math.cos(c);
 		  	r[1] = p[1];
 		  	r[2] = p[2]*Math.cos(c) - p[0]*Math.sin(c);
-		  
+
 		  	//translate to correct position
 		  	out[0] = r[0] + b[0];
 		  	out[1] = r[1] + b[1];
 		  	out[2] = r[2] + b[2];
-		  
+
 		  	return out;
 		};
 
@@ -49347,17 +49347,17 @@
 		  	p[0] = a[0] - b[0];
 		  	p[1] = a[1] - b[1];
 		  	p[2] = a[2] - b[2];
-		  
+
 		  	//perform rotation
 		  	r[0] = p[0]*Math.cos(c) - p[1]*Math.sin(c);
 		  	r[1] = p[0]*Math.sin(c) + p[1]*Math.cos(c);
 		  	r[2] = p[2];
-		  
+
 		  	//translate to correct position
 		  	out[0] = r[0] + b[0];
 		  	out[1] = r[1] + b[1];
 		  	out[2] = r[2] + b[2];
-		  
+
 		  	return out;
 		};
 
@@ -49385,7 +49385,7 @@
 		        if(!offset) {
 		            offset = 0;
 		        }
-		        
+
 		        if(count) {
 		            l = Math.min((count * stride) + offset, a.length);
 		        } else {
@@ -49397,7 +49397,7 @@
 		            fn(vec, vec, arg);
 		            a[i] = vec[0]; a[i+1] = vec[1]; a[i+2] = vec[2];
 		        }
-		        
+
 		        return a;
 		    };
 		})();
@@ -49409,20 +49409,20 @@
 		 * @returns {Number} The angle in radians
 		 */
 		vec3.angle = function(a, b) {
-		   
+
 		    var tempA = vec3.fromValues(a[0], a[1], a[2]);
 		    var tempB = vec3.fromValues(b[0], b[1], b[2]);
-		 
+
 		    vec3.normalize(tempA, tempA);
 		    vec3.normalize(tempB, tempB);
-		 
+
 		    var cosine = vec3.dot(tempA, tempB);
 
 		    if(cosine > 1.0){
 		        return 0;
 		    } else {
 		        return Math.acos(cosine);
-		    }     
+		    }
 		};
 
 		/**
@@ -50022,7 +50022,7 @@
 		        if(!offset) {
 		            offset = 0;
 		        }
-		        
+
 		        if(count) {
 		            l = Math.min((count * stride) + offset, a.length);
 		        } else {
@@ -50034,7 +50034,7 @@
 		            fn(vec, vec, arg);
 		            a[i] = vec[0]; a[i+1] = vec[1]; a[i+2] = vec[2]; a[i+3] = vec[3];
 		        }
-		        
+
 		        return a;
 		    };
 		})();
@@ -50586,7 +50586,7 @@
 		 * @returns {vec2} out
 		 */
 		vec2.transformMat4 = function(out, a, m) {
-		    var x = a[0], 
+		    var x = a[0],
 		        y = a[1];
 		    out[0] = m[0] * x + m[4] * y + m[12];
 		    out[1] = m[1] * x + m[5] * y + m[13];
@@ -50617,7 +50617,7 @@
 		        if(!offset) {
 		            offset = 0;
 		        }
-		        
+
 		        if(count) {
 		            l = Math.min((count * stride) + offset, a.length);
 		        } else {
@@ -50629,7 +50629,7 @@
 		            fn(vec, vec, arg);
 		            a[i] = vec[0]; a[i+1] = vec[1];
 		        }
-		        
+
 		        return a;
 		    };
 		})();
@@ -50906,7 +50906,7 @@
 	/* 172 */
 	/***/ function(module, exports, __webpack_require__) {
 
-		
+
 		var path = __webpack_require__(173);
 
 		// readFileSync calls must be written out long-form for brfs.
@@ -58918,7 +58918,7 @@
 	 *
 	 * @providesModule shallowEqual
 	 * @typechecks
-	 * 
+	 *
 	 */
 
 	'use strict';
@@ -65664,7 +65664,7 @@
 /* 276 */
 /***/ function(module, exports) {
 
-	
+
 
 /***/ },
 /* 277 */
@@ -66560,7 +66560,7 @@
 /***/ function(module, exports) {
 
 	module.exports = {
-		"accessToken": "pk.eyJ1IjoiZmFicmljOCIsImEiOiJjaWc5aTV1ZzUwMDJwdzJrb2w0dXRmc2d0In0.p6GGlfyV-WksaDV_KdN27A",
+		"accessToken": "pk.eyJ1IjoianBpemFycm9tIiwiYSI6Ik9qdEw3cnMifQ.MsMbzwzgqLLQvBUd0a4hGg",
 		"style": "mapbox://styles/mapbox/streets-v8"
 	};
 
@@ -83177,7 +83177,7 @@
 	/* 5 */
 	/***/ function(module, exports, __webpack_require__) {
 
-		
+
 		/**
 		 * This is the common logic for both the Node.js and web browser
 		 * implementations of `debug()`.
@@ -83538,7 +83538,7 @@
 	/* 7 */
 	/***/ function(module, exports, __webpack_require__) {
 
-		
+
 		/**
 		 * Module dependencies.
 		 */
@@ -83875,7 +83875,7 @@
 		  } catch(e){
 		    return error();
 		  }
-		  return p; 
+		  return p;
 		};
 
 		/**
@@ -83948,7 +83948,7 @@
 	/* 8 */
 	/***/ function(module, exports, __webpack_require__) {
 
-		
+
 		/**
 		 * This is the web browser implementation of `debug()`.
 		 *
@@ -84122,7 +84122,7 @@
 	/* 9 */
 	/***/ function(module, exports, __webpack_require__) {
 
-		
+
 		/**
 		 * This is the common logic for both the Node.js and web browser
 		 * implementations of `debug()`.
@@ -85385,7 +85385,7 @@
 	/* 13 */
 	/***/ function(module, exports) {
 
-		
+
 		/**
 		 * Expose `Emitter`.
 		 */
@@ -86299,7 +86299,7 @@
 	/* 18 */
 	/***/ function(module, exports, __webpack_require__) {
 
-		
+
 		module.exports = __webpack_require__(19);
 
 
@@ -86307,7 +86307,7 @@
 	/* 19 */
 	/***/ function(module, exports, __webpack_require__) {
 
-		
+
 		module.exports = __webpack_require__(20);
 
 		/**
@@ -87172,7 +87172,7 @@
 	/* 23 */
 	/***/ function(module, exports) {
 
-		
+
 		/**
 		 * Module exports.
 		 *
@@ -88656,7 +88656,7 @@
 	/* 28 */
 	/***/ function(module, exports) {
 
-		
+
 		/**
 		 * Gets the keys for an object.
 		 *
@@ -89239,7 +89239,7 @@
 	/* 36 */
 	/***/ function(module, exports, __webpack_require__) {
 
-		
+
 		/**
 		 * Expose `Emitter`.
 		 */
@@ -89451,7 +89451,7 @@
 	/* 38 */
 	/***/ function(module, exports) {
 
-		
+
 		module.exports = function(a, b){
 		  var fn = function(){};
 		  fn.prototype = b.prototype;
@@ -90073,7 +90073,7 @@
 	/* 43 */
 	/***/ function(module, exports) {
 
-		
+
 		var indexOf = [].indexOf;
 
 		module.exports = function(arr, obj){
@@ -90700,7 +90700,7 @@
 	/* 51 */
 	/***/ function(module, exports) {
 
-		
+
 		/**
 		 * Expose `Backoff`.
 		 */
